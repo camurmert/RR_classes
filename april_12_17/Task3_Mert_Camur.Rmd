@@ -1,0 +1,58 @@
+---
+title: "Exircise1"
+author: "Mert CAMUR"
+date: "17/05/2021"
+output: 
+   ioslides_presentation
+  
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![Game of Thrones Cover](GOT.jpg)
+
+# Short Game of Thronse Analysis Season 5 
+
+
+
+## First Episode Description 
+
+Alliser Thorne assumes command of the Night Watch, while Ser Davos, and several loyalists bolt themselves inside a room with Jon's body; Edd leaves Castle Black to seek help. At Winterfell, Ramsay briefly mourns Myranda, while Sansa and Theon are pursued by Bolton men. Brienne and Podrick arrive, killing the pursuers. Sansa formally accepts Brienne into her service. Jaime arrives in King's Landing with Myrcella's body and vows to Cersei to take back everything taken from them. Obara and Nymeria murder Trystane Martell while, in Sunspear, Ellaria and Tyene kill Prince Doran and Areo Hotah after Doran learns of Myrcella's murder. In Meereen, Tyrion and Varys discover ships are burning in the harbor. Jorah and Daario Naharis continue tracking Daenerys, whom the Dothraki take to Khal Moro. In Braavos, a blinded Arya begs on the street. Each day, the Waif beats her with a staff and forces her to fight. In her bedchamber, Melisandre removes her bejeweled necklace revealing she is elderly and frail. 
+
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+
+setwd("C:/Users/lenovo/Desktop/uni/semester4/Reproducible Research/RR_classes-main/RR_classes-main/april_05_09")
+load("Data/season_6.RData")
+```
+
+
+In this short report, _Game of Thrones_ series will be analyzed.
+
+
+
+```{r}
+season_data %>% head()
+```
+```{r}
+season_data %>% summary()
+```
+
+```{r}
+plot(season_data$viewers, type="l", xlab = "Episode number", ylab = "1st day TV viewers in the US (millions)")
+```
+
+
+
+
+```{r}
+plot(y = season_data$viewers, x = season_data$no_season, xlab = "Season number", ylab = "1st day TV viewers in the US (millions)")
+```
+
+
+
+The viewership increased dramaticly by `1.23` between seasons 9 and 10.
+
+
